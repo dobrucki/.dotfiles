@@ -1,6 +1,6 @@
 [user]
 	email = dobrucki2@gmail.com
 	name = Jedrzej Dobrucki
-	signingkey = 6D62802AA0CCDF28
+	signingkey = 2698C812C37AE0E0 
 [commit]
 	gpgsign = true
