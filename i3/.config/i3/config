@@ -4,15 +4,14 @@ set $mod Mod4
 font pango:monospace 10
 
 # Colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# class                 border  backgr. text    indicator
+client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+client.unfocused        #2e3440 #1f222d #888888 #1f222d
+client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+client.placeholder      #2e3440 #1f222d #888888 #1f222d
+client.urgent           #900000 #900000 #ffffff #900000
 
-client.background       #ffffff
-
+client.background       #242424
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -29,6 +28,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# restore wallpaper
+exec_always --no-startup-id nitrogen --restore
+
+# start dropbox
+exec --no-startup-id dropbox start
+
+# start picom
+exec --no-startup-id picom --experimental-backends -b
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -41,15 +52,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
-
-# start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# restore wallpaper
-exec_always --no-startup-id nitrogen --restore
-
-# start dropbox
-exec --no-startup-id dropbox start
 
 # kill focused window
 bindsym $mod+q kill
