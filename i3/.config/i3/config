@@ -1,3 +1,4 @@
+# Use super key as mod
 set $mod Mod4
 
 # Font
@@ -12,6 +13,14 @@ client.placeholder      #2e3440 #1f222d #888888 #1f222d
 client.urgent           #900000 #900000 #ffffff #900000
 
 client.background       #242424
+
+# Borders
+default_border pixel 1
+default_floating_border pixel 1
+
+# Gaps
+gaps inner 10
+gaps outer 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
