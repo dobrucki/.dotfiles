@@ -1,5 +1,6 @@
 {
-    "workbench.colorTheme": "Nord",
-    "editor.fontFamily": "'Iosevka Nerd Font,  Iosevka Custom",
-    "editor.fontLigatures": false
+    "editor.fontFamily": "Anonymous Pro, FontAwesome",
+    "editor.fontLigatures": false,
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "editor.fontSize": 15
 }

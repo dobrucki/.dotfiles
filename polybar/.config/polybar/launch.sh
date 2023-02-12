@@ -1,11 +1,4 @@
-#!/usr/bin/env bash
-
-# Terminate already running bar instances
-# If all your bars have ipc enabled, you can use 
-# polybar-msg cmd quit
-# Otherwise you can use the nuclear option:
+#!/usr/bin/sh
 killall -q polybar
 
-# Launch main bar
-echo "---" | tee -a /tmp/polybar-top-bar.log 
-polybar top-bar 2>&1 | tee -a /tmp/polybar-top-bar.log & disown
+polybar gruvbox 2>&1 | tee -a /tmp/polybar-gruvbox.log & disown
