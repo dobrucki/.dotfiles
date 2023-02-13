@@ -3,9 +3,9 @@ set $mod Mod4
 
 # Colors
 # class                 border  backgr. text    indicator
-client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+client.focused          #cc241d #81a1c1 #ffffff #81a1c1
 client.unfocused        #2e3440 #1f222d #888888 #1f222d
-client.focused_inactive #2e3440 #1f222d #888888 #1f222d
+client.focused_inactive #cc241d #1f222d #888888 #1f222d
 client.placeholder      #2e3440 #1f222d #888888 #1f222d
 client.urgent           #900000 #900000 #ffffff #900000
 
@@ -16,18 +16,17 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # Gaps
-gaps inner 10
-gaps outer 10
-
+gaps inner 6
+gaps outer 6
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id dropbox start
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore
-exec --no-startup-id dropbox start
-exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

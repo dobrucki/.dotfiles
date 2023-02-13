@@ -1,4 +1,7 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
+
 killall -q polybar
 
-polybar gruvbox 2>&1 | tee -a /tmp/polybar-gruvbox.log & disown
+while pgrep -x polybar >/dev/null; do sleep 1; done
+
+polybar &
