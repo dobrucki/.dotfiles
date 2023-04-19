@@ -1,0 +1,5 @@
+require('dobrucki.setup-plugins')
+require('dobrucki.set')
+require('dobrucki.remap')
+require('dobrucki.colorscheme')
+require('dobrucki.plugins')
